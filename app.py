@@ -1,9 +1,9 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
+from flask_cors import CORS  # ✅ Add this line
 import pickle
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend (browser) to call this API
+CORS(app)  # ✅ Add this line to allow frontend calls
 
 # Load the model and vectorizer
 model = pickle.load(open("model.pkl", "rb"))
